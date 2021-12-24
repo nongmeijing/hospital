@@ -9,6 +9,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 /**
  * @author 郑为中
@@ -53,4 +54,10 @@ public class Doctor extends ZwzBaseEntity {
 
     @ApiModelProperty(value = "医生介绍")
     private String about;
+
+    @ApiModelProperty(value = "医生照片")
+    private String photo;
+
+    @ApiModelProperty(value = "挂号费用")
+    private BigDecimal orderMoney;
 }

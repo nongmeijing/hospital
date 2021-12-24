@@ -20,3 +20,15 @@ export const deleteDoctor = (params) => {
 export const getAllHospitalSubjectList = (params) => {
     return getRequest('/hospitalSubject/getAll', params)
 }
+// 放号
+export const addNumber = (params) => {
+    return postRequest('/doctorScheduling/addNumber', params)
+}
+// 查询医生号源
+export const getDoctorSchedulingList = (params) => {
+    return getRequest('/doctorScheduling/getByPage', params)
+}
+// 挂号
+export const addOrder = (params) => {
+    return postRequest('/hospitalOrder/addOrder', params)
+}

@@ -31,13 +31,13 @@ public class ZwzMPGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String className = "Doctor";
+    private static final String className = "DoctorScheduling";
 
     /**
      * 类说明描述
      * 建议仅需修改
      */
-    private static final String description = "医生";
+    private static final String description = "医生排班";
 
     /**
      * 作者名
