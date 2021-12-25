@@ -156,7 +156,6 @@ export default {
             that.subLoading = true;
             getAllHospitalSubjectList().then(res => {
                 that.subLoading = false;
-                console.log(res);
                 if (res.success) {
                     that.subData = res.result;
                 }

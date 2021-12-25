@@ -413,7 +413,6 @@ export default {
         },
         getDoctorSchedulingListFx() {
             var that = this;
-            console.log(that.orderSearchForm);
             getDoctorSchedulingList(that.orderSearchForm).then(res => {
                 if (res.success) {
                     that.orderData = res.result.records;

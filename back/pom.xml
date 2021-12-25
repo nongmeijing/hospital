@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.zwz</groupId>
-    <artifactId>template</artifactId>
+    <artifactId>order-register</artifactId>
     <version>1.0.0</version>
 
     <parent>

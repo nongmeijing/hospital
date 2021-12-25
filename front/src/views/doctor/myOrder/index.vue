@@ -491,7 +491,6 @@ export default {
         },
         getDoctorSchedulingListFx() {
             var that = this;
-            console.log(that.orderSearchForm);
             getDoctorSchedulingList(that.orderSearchForm).then(res => {
                 if (res.success) {
                     that.orderData = res.result.records;
@@ -560,9 +559,7 @@ export default {
         },
         getDataList() {
             this.loading = true;
-            console.log(this.searchForm);
             getMyOrderList(this.searchForm).then(res => {
-                console.log(res);
                 this.loading = false;
                 if (res.success) {
                     this.data = res.result.records;

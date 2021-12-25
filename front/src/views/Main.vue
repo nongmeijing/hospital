@@ -134,7 +134,7 @@ export default {
     },
     data() {
         return {
-            sliceNum: 3,
+            sliceNum: 4,
             shrink: false,
             username: "",
             userId: "",
@@ -274,13 +274,13 @@ export default {
         resize() {
             let currWidth = document.body.clientWidth;
             if (currWidth <= 1200 && currWidth > 900) {
-                this.sliceNum = 2;
+                this.sliceNum = 3;
                 this.shrink = true;
             } else if (currWidth <= 900) {
                 this.sliceNum = 1;
                 this.shrink = true;
             } else {
-                this.sliceNum = 3;
+                this.sliceNum = 4;
                 this.shrink = false;
             }
         }

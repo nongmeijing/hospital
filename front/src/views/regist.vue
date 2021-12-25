@@ -6,7 +6,7 @@
             <div class="loginLeft">
                 <img src="../assets/login/logo.png" alt="" srcset="">
                 <span class="line"></span>
-                <span class="title">XXXX管理系统</span>
+                <span class="title">医院门诊预约挂号管理系统</span>
             </div>
         </div>
         <div class="loginMiddle">
@@ -169,8 +169,6 @@ export default {
             this.form.captchaId = this.captchaId;
             this.form.mobile = this.form.username;
             this.$refs.usernameLoginForm.validate(valid => {
-                console.log(valid);
-                console.log(this.form.code);
                 if (valid) {
                     if (!this.form.code) {
                         this.errorCode = "验证码不能为空";
@@ -180,7 +178,6 @@ export default {
                     }
                     this.loading = true;
                     regist(this.form).then(res => {
-                        console.log(res);
                         this.loading = false;
                         if (res.success) {
                             let query = {
