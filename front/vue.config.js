@@ -2,9 +2,9 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     devServer: {
-        https: true,
+        https: false,
         host: '0.0.0.0',
-        port: 443,
+        port: 80,
         proxy: {
             '/zwz': {
                 target: 'http://127.0.0.1:1688',

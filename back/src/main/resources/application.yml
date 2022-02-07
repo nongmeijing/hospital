@@ -10,6 +10,7 @@ server:
     max-swallow-size: -1
   shutdown: graceful
 spring:
+  # 数据源
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true
     username: root
@@ -46,62 +47,30 @@ spring:
       time-zone: GMT+8
       serialization:
         fail-on-empty-beans: false
-captcha:
-  # 图片验证码验证
-  image:
-    - /zwz/login # 登录接口
-    - /zwz/oauth2/authorize # 认证接口
-    - /zwz/user/regist # 注册接口
-  # 短信验证码验证
-  sms:
-    - /zwz/user/smsLogin # 短信登录接口
-    - /zwz/user/resetByMobile # 手机重置密码
-    - /zwz/user/changeMobile # 更换绑定手机
-    - /zwz/app/v1/member/quickLogin # 会员快捷登录注册接口
-  # Vaptcha验证码验证
-  vaptcha:
-    - /zwz/common/captcha/sendRegistSms/** # 发送注册短信
-    - /zwz/common/captcha/sendResetSms/** # 发送重置密码短信
-    - /zwz/email/sendResetCode/** # 发送重置密码邮件
-    - /zwz/social/relate # 绑定第三方账号
-  # Email验证码验证
-  email:
-    - /zwz/email/resetByEmail # 邮件重置密码
-    - /zwz/email/editEmail # 修改绑定邮箱
+intercept:
+  verification:
+    - /zwz/login # 登录
+    - /zwz/user/regist # 注册
+  wechat:
+    - /zwz/user/smsLogin # 短信登录
+    - /zwz/user/resetByMobile # 手机重置
+    - /zwz/user/changeMobile # 更换定手机
 
-# 忽略url
-ignored:
-  # 无需登录认证的请求
-  urls:
-    - /zwz/app/v1/**
-    - /zwz/oauth2/**
+release:
+  authentication:
     - /zwz/actuator/**
-    - /zwz/admin/**
-    - /editor-app/**
-    - /zwz/act/**
     - /zwz/dictData/getByType/**
-    - /zwz/email/sendResetCode/**
-    - /zwz/email/resetByEmail
     - /zwz/file/view/**
-    - /zwz/social/**
     - /zwz/ws/**
     - /zwz/setting/notice
     - /zwz/user/regist
-    - /zwz/user/smsLogin
-    - /zwz/user/resetByMobile
     - /zwz/common/**
-    - /druid/**
-    - /swagger-ui.html
-    - /swagger-resources/**
-    - /swagger/**
-    - /**/v2/api-docs
     - /**/*.js
     - /**/*.css
     - /**/*.png
     - /**/*.ico
     - /zwz/test/**
-  # 限流及黑名单不拦截的路径
-  limitUrls:
+  limiting:
     - /**/*.js
     - /**/*.css
     - /**/*.png

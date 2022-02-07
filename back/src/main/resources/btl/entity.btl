@@ -1,6 +1,6 @@
 package ${entity.entityPackage};
 
-import cn.zwz.base.ZwzBaseEntity;
+import cn.zwz.basics.baseClass.ZwzBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,6 +44,15 @@ import javax.persistence.Table;
 public class ${entity.className} extends ZwzBaseEntity {
 
     private static final long serialVersionUID = 1L;
+
+    <%
+    if(!entity.isTree){
+    %>
+    @ApiModelProperty(value = "${entity.description}标题")
+    private String title;
+    <%
+    }
+    %>
 
     <%
     if(entity.activiti&&!entity.isTree){

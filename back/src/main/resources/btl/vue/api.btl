@@ -1,18 +1,23 @@
 import { getRequest, postRequest, putRequest, postBodyRequest, getNoAuthRequest, postNoAuthRequest } from '@/libs/axios';
 
-// 分页获取数据
+export const get${apiName}One = (params) => {
+    return getRequest('/${vueName}/getOne', params)
+}
 export const get${apiName}List = (params) => {
     return getRequest('/${vueName}/getByPage', params)
 }
-// 添加
+export const get${apiName}Count = (params) => {
+    return getRequest('/${vueName}/count', params)
+}
 export const add${apiName} = (params) => {
-    return postRequest('/${vueName}/insertOrUpdate', params)
+    return postRequest('/${vueName}/insert', params)
 }
-// 编辑
 export const edit${apiName} = (params) => {
+    return postRequest('/${vueName}/update', params)
+}
+export const addOrEdit${apiName} = (params) => {
     return postRequest('/${vueName}/insertOrUpdate', params)
 }
-// 删除
 export const delete${apiName} = (params) => {
     return postRequest('/${vueName}/delByIds', params)
 }
