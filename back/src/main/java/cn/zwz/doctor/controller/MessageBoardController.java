@@ -37,12 +37,6 @@ public class MessageBoardController {
     @Autowired
     private SecurityUtil securityUtil;
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个留言")
-    public Result<MessageBoard> get(@PathVariable String id){
-        return new ResultUtil<MessageBoard>().setData(iMessageBoardService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有留言")
     public Result<List<MessageBoard>> getAll(){

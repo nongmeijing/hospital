@@ -114,12 +114,6 @@ public class HospitalOrderController {
         return ResultUtil.success("预约成功!");
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个挂号信息")
-    public Result<HospitalOrder> get(@PathVariable String id){
-        return new ResultUtil<HospitalOrder>().setData(iHospitalOrderService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有挂号信息")
     public Result<List<HospitalOrder>> getAll(){

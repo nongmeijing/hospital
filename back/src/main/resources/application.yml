@@ -1,5 +1,5 @@
 server:
-  port: 1688
+  port: 8081
   servlet:
     context-path: /
   tomcat:
@@ -10,7 +10,6 @@ server:
     max-swallow-size: -1
   shutdown: graceful
 spring:
-  # 数据源
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true
     username: root
@@ -29,33 +28,27 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-    # Redis
-    redis:
-      host: 127.0.0.1
-      #    password:
-      # 数据库索引 默认0
-      database: 0
-      port: 6379
-      # 超时时间 Duration类型 3秒
-      timeout: 3S
-    # 文件大小上传配置
-    servlet:
-      multipart:
-        max-file-size: 50MB
-        max-request-size: 50MB
-    jackson:
-      time-zone: GMT+8
-      serialization:
-        fail-on-empty-beans: false
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    timeout: 3S
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  jackson:
+    time-zone: GMT+8
+    serialization:
+      fail-on-empty-beans: false
 intercept:
   verification:
-    - /zwz/login # 登录
-    - /zwz/user/regist # 注册
+    - /zwz/login
+    - /zwz/user/regist
   wechat:
-    - /zwz/user/smsLogin # 短信登录
-    - /zwz/user/resetByMobile # 手机重置
-    - /zwz/user/changeMobile # 更换定手机
-
+    - /zwz/user/smsLogin
+    - /zwz/user/resetByMobile
+    - /zwz/user/changeMobile
 release:
   authentication:
     - /zwz/actuator/**
@@ -75,24 +68,6 @@ release:
     - /**/*.css
     - /**/*.png
     - /**/*.ico
-
-# Actuator
-management:
-  endpoint:
-    health:
-      show-details: always
-      status:
-        http-mapping:
-          DOWN: 200
-          OUT_OF_SERVICE: 200
-          FATAL: 200
-          UNKNOWN: 200
-  endpoints:
-    web:
-      base-path: /zwz/actuator/
-      exposure:
-        include: '*'
-
 mybatis-plus:
   global-config:
     db-config:
@@ -101,9 +76,7 @@ mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-# 日志
 logging:
-  # 输出级别
   level:
     root: info
   file:

@@ -29,12 +29,6 @@ public class HospitalSubjectController {
     @Autowired
     private IHospitalSubjectService iHospitalSubjectService;
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个科室")
-    public Result<HospitalSubject> get(@PathVariable String id){
-        return new ResultUtil<HospitalSubject>().setData(iHospitalSubjectService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有科室")
     public Result<List<HospitalSubject>> getAll(){

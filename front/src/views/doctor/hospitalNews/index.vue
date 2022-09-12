@@ -153,8 +153,8 @@ export default {
                                 h("img", {
                                     attrs: {
                                         src: params.row.photo,
-                                        height: 80,
-                                        width: 100,
+                                        height: 100,
+                                        width: "100%",
                                     },
                                 }),
                             ]);

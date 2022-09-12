@@ -17,8 +17,8 @@ import javax.persistence.Table;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "t_hospital_news")
-@TableName("t_hospital_news")
+@Table(name = "a_hospital_news")
+@TableName("a_hospital_news")
 @ApiModel(value = "医院新闻")
 public class HospitalNews extends ZwzBaseEntity {
 
@@ -50,5 +50,4 @@ public class HospitalNews extends ZwzBaseEntity {
 
     @ApiModelProperty(value = "关联服务名")
     private String relateServiceName;
-
 }

@@ -28,12 +28,6 @@ public class HospitalNewsController {
     @Autowired
     private IHospitalNewsService iHospitalNewsService;
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个医院新闻")
-    public Result<HospitalNews> get(@PathVariable String id){
-        return new ResultUtil<HospitalNews>().setData(iHospitalNewsService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有医院新闻")
     public Result<List<HospitalNews>> getAll(){

@@ -57,12 +57,6 @@ public class DoctorSchedulingController {
         return ResultUtil.success("放号成功");
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个医生排班")
-    public Result<DoctorScheduling> get(@PathVariable String id){
-        return new ResultUtil<DoctorScheduling>().setData(iDoctorSchedulingService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有医生排班")
     public Result<List<DoctorScheduling>> getAll(){

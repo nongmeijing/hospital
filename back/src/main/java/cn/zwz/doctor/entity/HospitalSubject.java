@@ -19,8 +19,8 @@ import javax.persistence.Table;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "t_hospital_subject")
-@TableName("t_hospital_subject")
+@Table(name = "a_hospital_subject")
+@TableName("a_hospital_subject")
 @ApiModel(value = "科室")
 public class HospitalSubject extends ZwzBaseEntity {
 

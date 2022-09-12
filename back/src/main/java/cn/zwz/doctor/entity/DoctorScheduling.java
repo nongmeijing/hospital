@@ -17,8 +17,8 @@ import javax.persistence.Table;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "t_doctor_scheduling")
-@TableName("t_doctor_scheduling")
+@Table(name = "a_doctor_scheduling")
+@TableName("a_doctor_scheduling")
 @ApiModel(value = "医生排班")
 public class DoctorScheduling extends ZwzBaseEntity {
 

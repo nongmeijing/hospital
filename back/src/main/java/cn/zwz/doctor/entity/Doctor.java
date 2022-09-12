@@ -20,8 +20,8 @@ import java.math.BigDecimal;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "t_doctor")
-@TableName("t_doctor")
+@Table(name = "a_doctor")
+@TableName("a_doctor")
 @ApiModel(value = "医生")
 public class Doctor extends ZwzBaseEntity {
 

@@ -31,12 +31,6 @@ public class DoctorController {
     @Autowired
     private IDoctorService iDoctorService;
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "查询单个医生")
-    public Result<Doctor> get(@PathVariable String id){
-        return new ResultUtil<Doctor>().setData(iDoctorService.getById(id));
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ApiOperation(value = "查询所有医生")
     public Result<List<Doctor>> getAll(){

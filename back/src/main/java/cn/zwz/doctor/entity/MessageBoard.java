@@ -19,8 +19,8 @@ import javax.persistence.Table;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "t_message_board")
-@TableName("t_message_board")
+@Table(name = "a_message_board")
+@TableName("a_message_board")
 @ApiModel(value = "留言板")
 public class MessageBoard extends ZwzBaseEntity {
 
